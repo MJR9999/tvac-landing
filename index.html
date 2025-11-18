@@ -13,11 +13,11 @@
       --bg: #050816;
       --bg-elevated: #0b1020;
       --bg-soft: #111827;
-      /* Blue accent kept for the score graph only */
+      /* Blue accent kept only for the score graph */
       --accent: #38bdf8;
       --accent-soft: rgba(56, 189, 248, 0.12);
       --accent-strong: #06b6d4;
-      /* Orange accent for the UI */
+      /* Orange accent for main UI */
       --accent-ui: #fb923c;
       --accent-ui-soft: rgba(251, 146, 60, 0.16);
       --accent-ui-strong: #f97316;
@@ -89,18 +89,27 @@
       gap: 0.12rem;
     }
 
+    /* 3x larger logo text */
     .logo-title {
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: 0.28em;
+      font-size: 3rem;
       text-transform: uppercase;
       color: var(--accent-ui);
+      line-height: 1;
     }
 
     .logo-subtitle {
       font-size: 0.78rem;
       color: #f9fafb;
       opacity: 0.94;
+    }
+
+    @media (max-width: 640px) {
+      .logo-title {
+        font-size: 2rem; /* lidt mindre på mobil */
+        letter-spacing: 0.22em;
+      }
     }
 
     .nav-cta {
@@ -398,7 +407,7 @@
       position: absolute;
       inset: 0;
       width: var(--w, 50%);
-      background: linear-gradient(90deg, var(--accent), var(--accent-strong)); /* still blue */
+      background: linear-gradient(90deg, var(--accent), var(--accent-strong)); /* blå beholdt her */
     }
 
     .hero-factor-score {
