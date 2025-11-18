@@ -89,14 +89,28 @@
       gap: 0.12rem;
     }
 
-    /* 3x larger logo text */
+    /* BIG TVAC LOGO WITH OPTICAL ADJUSTMENT A–C */
     .logo-title {
+      display: flex;
       font-weight: 800;
-      letter-spacing: 0.12em;
       font-size: 3rem;
       text-transform: uppercase;
       color: var(--accent-ui);
       line-height: 1;
+    }
+
+    .logo-letter {
+      display: inline-block;
+      margin-right: 0.24em;   /* normal spacing T–V og V–A */
+    }
+
+    .logo-letter:last-child {
+      margin-right: 0;
+    }
+
+    /* pull C lidt ind mod A */
+    .logo-letter-tight {
+      margin-left: -0.08em;
     }
 
     .logo-subtitle {
@@ -107,8 +121,13 @@
 
     @media (max-width: 640px) {
       .logo-title {
-        font-size: 2rem; /* lidt mindre på mobil */
-        letter-spacing: 0.12em;
+        font-size: 2rem;
+      }
+      .logo-letter {
+        margin-right: 0.20em;
+      }
+      .logo-letter-tight {
+        margin-left: -0.06em;
       }
     }
 
@@ -696,7 +715,12 @@
   <header class="nav">
     <div class="nav-inner">
       <div class="logo">
-        <div class="logo-title">TVAC</div>
+        <div class="logo-title">
+          <span class="logo-letter">T</span>
+          <span class="logo-letter">V</span>
+          <span class="logo-letter">A</span>
+          <span class="logo-letter logo-letter-tight">C</span>
+        </div>
         <div class="logo-subtitle">The Tokenization Value-Add Calculator</div>
       </div>
       <div class="nav-cta">
