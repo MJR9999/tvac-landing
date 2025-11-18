@@ -13,9 +13,14 @@
       --bg: #050816;
       --bg-elevated: #0b1020;
       --bg-soft: #111827;
+      /* Blue accent kept for the score graph only */
       --accent: #38bdf8;
       --accent-soft: rgba(56, 189, 248, 0.12);
       --accent-strong: #06b6d4;
+      /* Orange accent for the UI */
+      --accent-ui: #fb923c;
+      --accent-ui-soft: rgba(251, 146, 60, 0.16);
+      --accent-ui-strong: #f97316;
       --text-main: #e5e7eb;
       --text-muted: #9ca3af;
       --border-subtle: #1f2937;
@@ -79,34 +84,23 @@
 
     .logo {
       display: flex;
-      align-items: center;
-      gap: 0.7rem;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.12rem;
     }
 
-    .logo-badge {
-      width: 32px;
-      height: 32px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 30% 20%, #38bdf8 0, #0ea5e9 35%, #1e293b 80%);
-      box-shadow: 0 0 0 1px rgba(148, 163, 184, 0.4),
-        0 12px 30px rgba(15, 23, 42, 0.8);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: #e0f2fe;
+    .logo-title {
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      font-size: 1.05rem;
+      text-transform: uppercase;
+      color: var(--accent-ui);
     }
 
-    .logo-text-main {
-      font-weight: 600;
-      letter-spacing: 0.03em;
-      font-size: 0.98rem;
-    }
-
-    .logo-text-sub {
+    .logo-subtitle {
       font-size: 0.78rem;
-      color: var(--text-muted);
+      color: #f9fafb;
+      opacity: 0.94;
     }
 
     .nav-cta {
@@ -124,6 +118,7 @@
       display: inline-flex;
       align-items: center;
       gap: 0.35rem;
+      background: rgba(15, 23, 42, 0.85);
     }
 
     .pill-dot {
@@ -153,14 +148,14 @@
     }
 
     .btn-primary {
-      background: radial-gradient(circle at top left, #38bdf8 0, #0ea5e9 30%, #0284c7 100%);
+      background: radial-gradient(circle at top left, #fed7aa 0, #fb923c 30%, #f97316 100%);
       color: #0b1120;
-      box-shadow: 0 14px 35px rgba(8, 47, 73, 0.65);
+      box-shadow: 0 14px 35px rgba(124, 45, 18, 0.65);
     }
 
     .btn-primary:hover {
       transform: translateY(-1px);
-      box-shadow: 0 20px 45px rgba(8, 47, 73, 0.85);
+      box-shadow: 0 20px 45px rgba(124, 45, 18, 0.85);
     }
 
     .btn-outline {
@@ -211,7 +206,7 @@
       font-size: 0.82rem;
       text-transform: uppercase;
       letter-spacing: 0.16em;
-      color: var(--accent);
+      color: var(--accent-ui);
       font-weight: 600;
       margin-bottom: 0.8rem;
     }
@@ -224,7 +219,7 @@
     }
 
     .hero-highlight {
-      background: linear-gradient(120deg, #38bdf8, #a855f7, #fbbf24);
+      background: linear-gradient(120deg, #fed7aa, #fb923c, #facc15);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
@@ -276,7 +271,7 @@
       border-radius: var(--radius-2xl);
       padding: 1.4rem 1.3rem;
       background: radial-gradient(circle at top, #0f172a 0, #020617 65%, #000 100%);
-      border: 1px solid rgba(148, 163, 184, 0.3);
+      border: 1px solid rgba(148, 163, 184, 0.35);
       box-shadow: var(--shadow-soft);
       position: relative;
       overflow: hidden;
@@ -287,9 +282,9 @@
       position: absolute;
       inset: -120px;
       background:
-        radial-gradient(circle at top right, rgba(56, 189, 248, 0.16) 0, transparent 55%),
-        radial-gradient(circle at bottom left, rgba(168, 85, 247, 0.16) 0, transparent 55%);
-      opacity: 0.8;
+        radial-gradient(circle at top right, rgba(251, 146, 60, 0.22) 0, transparent 55%),
+        radial-gradient(circle at bottom left, rgba(248, 113, 113, 0.18) 0, transparent 55%);
+      opacity: 0.9;
       pointer-events: none;
     }
 
@@ -321,6 +316,7 @@
       display: inline-flex;
       align-items: center;
       gap: 0.25rem;
+      background: rgba(15, 23, 42, 0.85);
     }
 
     .hero-score-row {
@@ -402,7 +398,7 @@
       position: absolute;
       inset: 0;
       width: var(--w, 50%);
-      background: linear-gradient(90deg, var(--accent), var(--accent-strong));
+      background: linear-gradient(90deg, var(--accent), var(--accent-strong)); /* still blue */
     }
 
     .hero-factor-score {
@@ -437,7 +433,7 @@
       font-size: 0.75rem;
       text-transform: uppercase;
       letter-spacing: 0.14em;
-      color: var(--accent);
+      color: var(--accent-ui);
       margin-bottom: 0.4rem;
     }
 
@@ -516,9 +512,9 @@
     }
 
     .badge-accent {
-      border-color: rgba(56, 189, 248, 0.85);
-      color: #e0f2fe;
-      background: rgba(8, 47, 73, 0.8);
+      border-color: rgba(251, 146, 60, 0.9);
+      color: #fffbeb;
+      background: rgba(124, 45, 18, 0.85);
     }
 
     .pricing {
@@ -536,16 +532,16 @@
     .pricing-plan {
       background: linear-gradient(135deg, rgba(15, 23, 42, 0.98), #020617);
       border-radius: var(--radius-2xl);
-      border: 1px solid rgba(56, 189, 248, 0.4);
+      border: 1px solid rgba(251, 146, 60, 0.7);
       padding: 1.3rem 1.3rem 1.4rem;
-      box-shadow: 0 22px 50px rgba(8, 47, 73, 0.75);
+      box-shadow: 0 22px 50px rgba(124, 45, 18, 0.8);
     }
 
     .pricing-label {
       font-size: 0.78rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--accent);
+      color: var(--accent-ui);
       margin-bottom: 0.3rem;
     }
 
@@ -611,7 +607,8 @@
       border-radius: var(--radius-2xl);
       padding: 1.05rem 1.2rem;
       border: 1px solid rgba(148, 163, 184, 0.5);
-      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.16) 0, transparent 50%),
+      background:
+        radial-gradient(circle at top left, rgba(251, 146, 60, 0.22) 0, transparent 55%),
         radial-gradient(circle at bottom right, rgba(147, 51, 234, 0.18) 0, transparent 55%),
         rgba(15, 23, 42, 0.96);
       display: flex;
@@ -634,33 +631,54 @@
 
     footer {
       border-top: 1px solid rgba(15, 23, 42, 0.85);
-      padding: 1.2rem 1.2rem 1.6rem;
+      padding: 1.6rem 1.2rem 2.2rem;
       font-size: 0.78rem;
       color: var(--text-muted);
+      background: #020617;
     }
 
     .footer-inner {
       max-width: var(--max-width);
       margin: 0 auto;
       display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-      flex-wrap: wrap;
+      flex-direction: column;
+      gap: 0.75rem;
       align-items: center;
+      text-align: center;
     }
 
-    .footer-links {
-      display: flex;
-      gap: 0.7rem;
-      flex-wrap: wrap;
+    .footer-contact {
+      line-height: 1.5;
     }
 
-    .footer-links a {
-      color: var(--text-muted);
-    }
-
-    .footer-links a:hover {
+    .footer-contact-heading {
+      font-weight: 600;
       color: #e5e7eb;
+      margin-bottom: 0.1rem;
+    }
+
+    .footer-highlight {
+      color: var(--accent-ui);
+    }
+
+    .footer-highlight:hover,
+    .footer-link:hover {
+      text-decoration: underline;
+    }
+
+    .footer-link {
+      color: var(--accent-ui);
+    }
+
+    .footer-disclaimer {
+      max-width: 50rem;
+      line-height: 1.6;
+    }
+
+    .footer-copy {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.1rem;
     }
   </style>
 </head>
@@ -669,11 +687,8 @@
   <header class="nav">
     <div class="nav-inner">
       <div class="logo">
-        <div class="logo-badge">TV</div>
-        <div>
-          <div class="logo-text-main">Tokenization Value-Add Calculator</div>
-          <div class="logo-text-sub">AI evaluation engine for serious tokenization projects</div>
-        </div>
+        <div class="logo-title">TVAC</div>
+        <div class="logo-subtitle">The Tokenization Value-Add Calculator</div>
       </div>
       <div class="nav-cta">
         <div class="pill">
@@ -1050,17 +1065,51 @@
 
   <footer>
     <div class="footer-inner">
-      <div>© <span id="year"></span> TVAC · Tokenization Value-Add Calculator</div>
-      <div class="footer-links">
-        <span>Built for the tokenization industry.</span>
+      <div class="footer-contact">
+        <div class="footer-contact-heading">Contact</div>
+        <div>Michael Juul Rugaard</div>
+        <div>
+          <a href="mailto:michael@thetokenizer.io" class="footer-highlight">
+            michael@thetokenizer.io
+          </a>
+        </div>
+        <div>
+          <a href="tel:+4593993883" class="footer-highlight">
+            +45 93 99 38 83
+          </a>
+        </div>
+        <div>
+          <a href="https://www.linkedin.com/in/michaeljuulrugaard/"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="footer-link">
+            LinkedIn
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-disclaimer">
+        <strong>Disclaimer.</strong>
+        This tool provides informational analysis based on the inputs you provide
+        and publicly available best-practice rubrics. It is not legal, financial,
+        investment or tax advice. Outcomes depend on jurisdiction-specific rules,
+        counterparty requirements, and implementation choices, which must be
+        verified with qualified professionals.
+      </div>
+
+      <div class="footer-copy">
+        © <span id="year">2025</span> Michael Juul Rugaard · All rights reserved.
       </div>
     </div>
   </footer>
 </div>
 
 <script>
-  // Set current year in footer
-  document.getElementById("year").textContent = new Date().getFullYear();
+  // Set current year in footer, if element is present
+  const yearSpan = document.getElementById("year");
+  if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
+  }
 </script>
 </body>
 </html>
