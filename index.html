@@ -89,7 +89,7 @@
       gap: 0.12rem;
     }
 
-    /* BIG TVAC LOGO WITH OPTICAL ADJUSTMENT A–C */
+    /* TVAC-logo med optisk justering */
     .logo-title {
       display: flex;
       font-weight: 800;
@@ -101,16 +101,21 @@
 
     .logo-letter {
       display: inline-block;
-      margin-right: 0.24em;   /* normal spacing T–V og V–A */
+      margin-right: 0.20em;      /* generel afstand */
     }
 
     .logo-letter:last-child {
       margin-right: 0;
     }
 
-    /* pull C lidt ind mod A */
+    /* V -> A lidt tættere */
+    .logo-title .logo-letter:nth-child(2) {
+      margin-right: 0.12em;
+    }
+
+    /* C lidt ind mod A */
     .logo-letter-tight {
-      margin-left: -0.08em;
+      margin-left: -0.06em;
     }
 
     .logo-subtitle {
@@ -123,11 +128,17 @@
       .logo-title {
         font-size: 2rem;
       }
+
       .logo-letter {
-        margin-right: 0.20em;
+        margin-right: 0.18em;
       }
+
+      .logo-title .logo-letter:nth-child(2) {
+        margin-right: 0.10em;
+      }
+
       .logo-letter-tight {
-        margin-left: -0.06em;
+        margin-left: -0.05em;
       }
     }
 
@@ -1138,7 +1149,6 @@
 </div>
 
 <script>
-  // Set current year in footer, if element is present
   const yearSpan = document.getElementById("year");
   if (yearSpan) {
     yearSpan.textContent = new Date().getFullYear();
