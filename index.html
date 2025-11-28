@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="The Tokenization Value-Add Calculator (TVAC) is an AI-driven evaluation engine that measures whether a given tokenization project actually creates added value compared to traditional solutions."
+    content="The Tokenization Value-Add Calculator (TVAC) is an AI-driven evaluation engine that measures whether a given tokenization project actually creates added value compared to traditional solutions – including a one-off case report for asset owners."
   />
   <style>
     :root {
@@ -596,6 +596,11 @@
       font-weight: 600;
     }
 
+    .pricing-price-suffix {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
     .pricing-note {
       font-size: 0.85rem;
       color: var(--text-muted);
@@ -737,15 +742,14 @@
       <div class="nav-cta">
         <div class="pill">
           <span class="pill-dot"></span>
-          <span>Founding tester cohort open</span>
+          <span>Demo & one-off report available</span>
         </div>
-        <a href="#pricing" class="btn btn-outline">
-          Pricing & access
+        <a href="#how" class="btn btn-outline">
+          How TVAC works
         </a>
-        <!-- Early access via email for now -->
-        <a href="mailto:michael@thetokenizer.io?subject=TVAC%20early%20access"
-           class="btn btn-primary">
-          <span>Get early access</span>
+        <!-- One-off report CTA (scrolls to pricing / Stripe link) -->
+        <a href="#oneoff" class="btn btn-primary">
+          <span>Order one-off case report</span>
           <span class="btn-icon">→</span>
         </a>
       </div>
@@ -768,14 +772,15 @@
         </p>
 
         <div class="hero-actions">
-          <!-- LINKED TO ANALYSIS APP -->
+          <!-- LINKED TO ANALYSIS APP (DEMO) -->
           <a href="https://tokenlex-ai-2.onrender.com"
              class="btn btn-primary">
             <span>Try TVAC demo</span>
             <span class="btn-icon">▶</span>
           </a>
-          <a href="#how" class="btn btn-outline">
-            <span>How TVAC works</span>
+          <!-- Scroll to one-off pricing / Stripe link -->
+          <a href="#oneoff" class="btn btn-outline">
+            <span>Order one-off case report</span>
           </a>
         </div>
 
@@ -969,44 +974,78 @@
     <section class="section" id="pricing">
       <div class="section-header">
         <div class="eyebrow">Access & pricing</div>
-        <h2 class="section-title">Founding tester access</h2>
+        <h2 class="section-title">From one-off case reports to enterprise pilots</h2>
         <p class="section-lead">
-          TVAC is currently in a controlled early-access phase. A small group of professional users
-          are invited to test the engine, shape the roadmap and secure preferential pricing.
+          TVAC is available both as a one-off deep-dive report for individual asset owners
+          and as an early-access engine for platforms, law firms and institutional users.
         </p>
       </div>
 
       <div class="pricing">
-        <div class="pricing-plan">
-          <div class="pricing-label">Founding tester</div>
+        <!-- ONE-OFF CASE REPORT -->
+        <div class="pricing-plan" id="oneoff">
+          <div class="pricing-label">TVAC One-Off Case Report</div>
           <div class="pricing-price-row">
-            <div class="pricing-price">Early access</div>
+            <div class="pricing-price">€395</div>
+            <div class="pricing-price-suffix">per case report (intro price, ex. VAT)</div>
           </div>
           <div class="pricing-note">
-            For serious tokenization platforms, law firms, issuers and institutional players who
-            want a structured way to evaluate project-by-project value-add.
+            For asset owners, issuers and project teams who want a single, independent
+            assessment of whether tokenization adds real value for a specific asset or structure.
           </div>
           <ul class="pricing-list">
-            <li>Access to the TVAC evaluation engine for a defined pilot period.</li>
-            <li>Direct feedback channel into the roadmap.</li>
-            <li>Preferential commercial terms for future enterprise use.</li>
+            <li>One TVAC deep assessment of your specific case.</li>
+            <li>Full written report with verdict, factor scores and narrative explanation.</li>
+            <li>Concrete suggestions for how to improve the design and value-add profile.</li>
+            <li>Delivery as a shareable report you can use with internal stakeholders and advisers.</li>
           </ul>
           <div style="display:flex; gap:0.7rem; flex-wrap:wrap; margin-top:0.6rem;">
-            <!-- Paid pilot via email for now -->
-            <a href="mailto:michael@thetokenizer.io?subject=TVAC%20paid%20pilot"
+            <!-- TODO: Replace href with your real Stripe Payment Link -->
+            <a href="https://buy.stripe.com/REPLACE_WITH_YOUR_LINK"
                class="btn btn-primary">
-              <span>Request paid pilot</span>
+              <span>Order one-off case report</span>
               <span class="btn-icon">→</span>
             </a>
-            <a href="mailto:michael@thetokenizer.io?subject=TVAC%20partnership"
+            <a href="mailto:michael@thetokenizer.io?subject=TVAC%20one-off%20case%20questions"
                class="btn btn-outline">
-              <span>Talk about a partnership</span>
+              <span>Ask a question first</span>
             </a>
           </div>
         </div>
 
+        <!-- FOUNDING TESTER / ENTERPRISE -->
         <div>
           <div class="card">
+            <h3 class="card-title">Founding tester & enterprise pilot</h3>
+            <p class="card-body">
+              For serious tokenization platforms, law firms, exchanges and institutional players
+              who want TVAC as a recurring evaluation engine rather than a single report.
+            </p>
+            <ul class="list">
+              <li>Access to the TVAC evaluation engine for a defined pilot period.</li>
+              <li>Multiple cases per month (volume agreed individually).</li>
+              <li>Direct feedback channel into the roadmap and feature set.</li>
+              <li>Preferential commercial terms for future enterprise use.</li>
+            </ul>
+            <p class="card-body">
+              If you screen many tokenization ideas per year and need a consistent framework
+              across all of them, the enterprise pilot is likely a better fit than one-off reports.
+            </p>
+            <div style="display:flex; gap:0.7rem; flex-wrap:wrap; margin-top:0.6rem;">
+              <!-- Paid pilot via email for now -->
+              <a href="mailto:michael@thetokenizer.io?subject=TVAC%20paid%20pilot"
+                 class="btn btn-primary">
+                <span>Request paid pilot</span>
+                <span class="btn-icon">→</span>
+              </a>
+              <a href="mailto:michael@thetokenizer.io?subject=TVAC%20partnership"
+                 class="btn btn-outline">
+                <span>Talk about a partnership</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="card" style="margin-top:1rem;">
             <h3 class="card-title">Who should use TVAC?</h3>
             <p class="card-body">
               TVAC is built for professionals who need to move beyond marketing buzzwords:
@@ -1098,9 +1137,9 @@
             <span>Run a demo case</span>
             <span class="btn-icon">▶</span>
           </a>
-          <a href="mailto:michael@thetokenizer.io?subject=TVAC%20walkthrough"
+          <a href="#oneoff"
              class="btn btn-outline">
-            <span>Book a short walkthrough</span>
+            <span>Order a one-off report</span>
           </a>
         </div>
       </div>
